@@ -44,12 +44,12 @@ nnoremap <leader>ev :vsp $MYVIMRC<CR>
 " CtrlP {{{
 " }}}
 " NERDTree {{{
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists(“s:std_in”) | NERDTree | endif   "Automagically open NERDTree when vim is opened with no args
-"autocmd bufenter * if (winnr(“$”) == 1 && exists(“b:NERDTreeType”)
-"&& b:NERDTreeType == “primary”) | q | endif   "Automagically close NERDTree if last tab
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree  "open NERDTree when vim is opened 
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "  }}}
 " Syntastic {{{
+let g:used_javascript_libs = 'jquery, angularjs, react, underscore' "Set libraries for syntax parsing
 " }}}
 " AutoGroups {{{
 " }}}
